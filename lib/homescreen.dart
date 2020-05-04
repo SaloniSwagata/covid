@@ -36,15 +36,71 @@ class AfterSplash extends StatelessWidget {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Cool"),
-        automaticallyImplyLeading: false,
+        //automaticallyImplyLeading: false,
         ),
-      body: new Center(
-        child: new Text("Succeeded!",
-        style: new TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30.0
-        ),),
-
+      body: GridView.count(
+  primary: false,
+  padding: const EdgeInsets.all(40),
+  crossAxisSpacing: 10,
+  mainAxisSpacing: 20,
+  crossAxisCount: 1,
+  children: <Widget>[
+    Container(
+      padding: const EdgeInsets.all(8),
+      child: const Text('He\'d have you all unravel at the'),
+      color: Colors.teal[100],
+    ),
+    Container(
+      padding: const EdgeInsets.all(8),
+      child: const Text('Heed not the rabble'),
+      color: Colors.teal[200],
+    ),
+    Container(
+      padding: const EdgeInsets.all(8),
+      child: const Text('Sound of screams but the'),
+      color: Colors.teal[300],
+    ),
+    Container(
+      padding: const EdgeInsets.all(20),
+      child: const Text('Who scream'),
+      color: Colors.teal[400],
+    ),
+   ],
+   ),
+    drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('Drawer Header'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('Item 1'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Item 2'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
