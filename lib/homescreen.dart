@@ -41,40 +41,40 @@ class Introscreen extends StatelessWidget {
         //automaticallyImplyLeading: false,
         ),
         drawer: Drawer(
-  child: ListView(
-    // Important: Remove any padding from the ListView.
-    padding: EdgeInsets.zero,
-    children: <Widget>[
-      DrawerHeader(
-        child: Text('COVID-19', 
-        style: TextStyle(
-          color:Colors.white,
-          fontSize: 40,
-        ),),
-        decoration: BoxDecoration(
-          color: Colors.deepPurple,
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child: Text('COVID-19', 
+                style: TextStyle(
+                color:Colors.white,
+                fontSize: 40,
+                ),),
+                decoration: BoxDecoration(
+                color: Colors.deepPurple,
+                ),
+              ),
+              ListTile(
+                title: Text("India's Status"),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text('State Wise Status'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
         ),
-      ),
-      ListTile(
-        title: Text("India's Status"),
-        onTap: () {
-          // Update the state of the app.
-          // ...
-          Navigator.pop(context);
-        },
-      ),
-      ListTile(
-        title: Text('State Wise Status'),
-        onTap: () {
-          // Update the state of the app.
-          // ...
-          Navigator.pop(context);
-          },
-        ),
-      ],
-    ),
-  ),
-  body: SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -141,7 +141,17 @@ class Introscreen extends StatelessWidget {
             )
           ],
         ),
-      ),  
+      ),
+    bottomNavigationBar: BottomAppBar(
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Text('Designed By Saloni Swagata',
+        textAlign: TextAlign.center,
+         style: TextStyle(
+           fontSize: 10.0,
+         ),),
+      ),
+    ), 
   );
   }
 }
