@@ -132,7 +132,11 @@ class StatusPanel extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(5),
       height: 500, width: width/2,
-      color: panelColor,
+      decoration: BoxDecoration(
+        color: panelColor,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
