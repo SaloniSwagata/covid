@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'package:covid/country.dart';
 
 class world extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class _worldState extends State<world> {
   @override
   Widget build(BuildContext context) {
       return new SplashScreen(
-      seconds: 5,
+      seconds: 3,
       navigateAfterSeconds: new Introscreen(),
       loadingText: new Text("Hang On!!!",
         style: new TextStyle(
@@ -59,8 +60,10 @@ class Introscreen extends StatelessWidget {
                 title: Text("India's Status"),
                 onTap: () {
                   // Update the state of the app.
-                  // ...
+                  // ...;
                   Navigator.pop(context);
+                  Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new Country()));              
                 },
               ),
               ListTile(
